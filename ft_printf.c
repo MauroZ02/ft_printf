@@ -1,5 +1,23 @@
 #include "ft_printf.h"
 
+int	print_char(int c)
+{
+	return (write(1, &c, 1));
+}
+
+int	print_str(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i])
+	{
+		print_char((int)str[i]);
+		i++;
+	}
+	return (i);
+}
+
 int	print_format(char specifier, va_list args)
 {
 	int	i;
@@ -10,14 +28,18 @@ int	print_format(char specifier, va_list args)
 	else if (specifier == 's')
 		i += print_str(va_arg(args, char *));
 	else if (specifier == 'd' || specifier == 'i')
-		i+= print_dec(va_arg(args, int));
+		i += print_dec(va_arg(args, int));
 	else if (specifier == 'x' || specifier == 'X')
 	{
 		if (specifier == 'x')
-			i+= print_hex(va_arg(args, unsigned int), HEX_LOW_BASE);
+			i += print_hex(va_arg(args, unsigned int), HEX_LOW_BASE);
 		else
-			i+= print_hex(va_arg(args, unsigned int), HEX_UPP_BASE);
+			i += print_hex(va_arg(args, unsigned int), HEX_UPP_BASE);
 	}
+	else if (specifier == 'u')
+		i += print_unsigned(va_arg(args, unsigned int));
+	else if (specifier == 'p')
+		i += print_ptr(va_arg(args, unsigned long), HEX_LOW_BASE);
 	else
 		i += write(1, &specifier, 1);
 	return (i);
@@ -25,7 +47,7 @@ int	print_format(char specifier, va_list args)
 
 int	ft_printf(const char *format, ...)
 {
-	va_list args;
+	va_list	args;
 	int	i;
 
 	va_start(args, format);
@@ -52,23 +74,39 @@ int	main()
 {
 	int	count;
 	
-	count = ft_printf("Test s:\nHello %s\n", "Mauro");
+	count = ft_printf("Test s: Hello %s\n", "Mauro");
 	ft_printf("The chars written are %d\n", count);
 	count = printf("printf: Hello %s\n", "Mauro");
 	printf("The chars written are %d\n", count);
+	
+	//printf("%p",0);
 
-	count = ft_printf("Test x:\n%x\n", -42);
+	count = ft_printf("Test x: %x\n", -42);
 	ft_printf("The chars written are %d\n", count);
 	count = printf("printf: %x\n", -42);
 	printf("The chars written are %d\n", count);
 
-	count = ft_printf("Test d:\n%d\n", -42);
+	count = ft_printf("Test d: %d\n", -42);
 	ft_printf("The chars written are %d\n", count);
 	count = printf("printf: %d\n", -42);
 	printf("The chars written are %d\n", count);
 
-		count = ft_printf("Test X:\n%X\n", -42);
+	count = ft_printf("Test X: %X\n", -42);
 	ft_printf("The chars written are %d\n", count);
 	count = printf("printf: %X\n", -42);
 	printf("The chars written are %d\n", count);
+
+	char *n = "08343489";
+	count = ft_printf("Test p: %p\n", n);
+	ft_printf("The chars written are %d\n", count);
+	count = printf("printf: %p\n", n);
+	printf("The chars written are %d\n", count);
+
+	count = ft_printf("Test u: %u\n", 42);
+	ft_printf("The chars written are %d\n", count);
+
+	
+	count = printf("Test u: %u\n", 42);
+	printf("The chars written are %d\n", count);
+	ft_printf("%p",0);
 }

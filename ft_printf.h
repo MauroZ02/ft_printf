@@ -15,4 +15,7 @@ int	print_char(int c);
 int	print_str(char *str);
 int	print_dec(int n);
 int	print_hex(unsigned int n, const char *symbols);
+int	print_unsigned(unsigned int n);
+int	print_long(unsigned long n, const char *symbols);
+int	print_ptr(unsigned long n, const char *symbols);
 # endif
