@@ -6,7 +6,7 @@
 /*   By: mzangaro <mzangaro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 20:10:47 by mzangaro          #+#    #+#             */
-/*   Updated: 2024/12/08 20:12:00 by mzangaro         ###   ########.fr       */
+/*   Updated: 2024/12/08 20:30:25 by mzangaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int	print_ptr(unsigned long n, const char *symbols)
 
 	i = 0;
 	if (n == 0)
-		return (write(1, "(nill)", 6));
+		return (write(1, "(nil)", 5));
 	i += write(1, "0x", 2);
 	i += print_long(n / 16, symbols);
 	i += print_char(symbols[n % 16]);
