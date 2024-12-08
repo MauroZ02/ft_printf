@@ -1,10 +1,22 @@
-#ifndef FT_PRINTF
-#define FT_PRINTF
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mzangaro <mzangaro@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/08 20:10:32 by mzangaro          #+#    #+#             */
+/*   Updated: 2024/12/08 20:11:42 by mzangaro         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdarg.h>
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
+
+# include <stdio.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdarg.h>
 
 # define HEX_UPP_BASE "0123456789ABCDEF"
 # define HEX_LOW_BASE "0123456789abcdef"
@@ -18,4 +30,4 @@ int	print_hex(unsigned int n, const char *symbols);
 int	print_unsigned(unsigned int n);
 int	print_long(unsigned long n, const char *symbols);
 int	print_ptr(unsigned long n, const char *symbols);
-# endif
+#endif

@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mzangaro <mzangaro@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/08 20:10:47 by mzangaro          #+#    #+#             */
+/*   Updated: 2024/12/08 20:12:00 by mzangaro         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "ft_printf.h"
 
@@ -22,6 +33,7 @@ int	print_dec(int n)
 	i += print_char(n % 10 + '0');
 	return (i);
 }
+
 int	print_hex(unsigned int n, const char *symbols)
 {
 	int	i;
@@ -32,6 +44,7 @@ int	print_hex(unsigned int n, const char *symbols)
 	i += print_char(symbols[n % 16]);
 	return (i);
 }
+
 int	print_unsigned(unsigned int n)
 {
 	int	i;
