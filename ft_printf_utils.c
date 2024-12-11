@@ -67,15 +67,17 @@ int	print_long(unsigned long n, const char *symbols)
 	return (i);
 }
 
-int	print_ptr(unsigned long n, const char *symbols)
+int	print_ptr(void *n, const char *symbols)
 {
-	int	i;
+	unsigned long	nb;
+	int				i;
 
 	i = 0;
+	nb = (unsigned long)n;
 	if (n == 0)
 		return (write(1, "(nil)", 5));
 	i += write(1, "0x", 2);
-	i += print_long(n / 16, symbols);
-	i += print_char(symbols[n % 16]);
+	i += print_long(nb / 16, symbols);
+	i += print_char(symbols[nb % 16]);
 	return (i);
 }

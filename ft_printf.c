@@ -86,7 +86,7 @@ int	main()
 {
 	int	count;
 
-	count = ft_printf("Test s: Hello %s\n", "Mauro");
+	/*count = ft_printf("Test s: Hello %s\n", "Mauro");
 	ft_printf("The chars written are %d\n", count);
 	count = printf("printf: Hello %s\n", "Mauro");
 	printf("The chars written are %d\n\n", count);
@@ -120,5 +120,26 @@ int	main()
 	count = ft_printf("Test p0: %p\n", 0);
 	ft_printf("The chars written are %d\n", count);
 	count = printf("printf0: %p\n", NULL);
-	printf("The chars written are %d\n\n", count);
+	printf("The chars written are %d\n\n", count);*/
+
+	ft_printf("Test 2:\n");
+	count = ft_printf(" %p ", -1);
+	ft_printf("\nThe chars written are %d", count);
+	
+	count = printf(" %p ", -1);
+	printf("\nThe chars written are %d", count);
+
+	ft_printf("\nTest 3:\n");
+	count = ft_printf(" %p ", 15);
+	ft_printf("\nThe chars written are %d", count);
+	
+	count = printf(" %p ", 15);
+	printf("\nThe chars written are %d", count);
+
+	/*ft_printf("\nTest 8:\n");
+	count = ft_printf(" %p ", 9223372036854775808);
+	ft_printf("\nThe chars written are %d", count);
+	
+	count = printf(" %p ", 9223372036854775808);
+	printf("\nThe chars written are %d", count);*/
 }
