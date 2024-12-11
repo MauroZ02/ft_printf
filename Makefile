@@ -6,11 +6,11 @@
 #    By: mzangaro <mzangaro@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/08 20:24:00 by mzangaro          #+#    #+#              #
-#    Updated: 2024/12/08 20:24:14 by mzangaro         ###   ########.fr        #
+#    Updated: 2024/12/11 20:12:46 by mzangaro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ft_printf.a
+NAME = libftprintf.a
 PRINTF = ar rcs
 RM = rm -f
 
