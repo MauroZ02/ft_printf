@@ -6,7 +6,7 @@
 /*   By: mzangaro <mzangaro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 20:10:41 by mzangaro          #+#    #+#             */
-/*   Updated: 2024/12/11 20:19:09 by mzangaro         ###   ########.fr       */
+/*   Updated: 2024/12/12 17:29:03 by mzangaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,4 +86,3 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (i);
 }
-
